@@ -10,12 +10,19 @@ namespace Vidly.Models
     public class Customer
     {
         public int Id { get; set; }
+
         [Required]
         [StringLength(255)] // data annotations
         public string Name { get; set; }
+
         public bool IsSubscribedToNewsletter { get; set; }
+
         public MembershipType MembershipType { get; set; } // A navigation property links related objects
+
+        [Display(Name = "MembershipType")]
         public byte MembershipTypeId { get; set; }
+
+        [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; } // nullable
     }
 }
